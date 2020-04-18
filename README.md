@@ -7,11 +7,12 @@ Use this docker image to run Laravel tests, including Dusk.
 swiftmade/laravel-test-container:7.2
 ```
 
-🐘 **PHP Version:** 7.2
-🌍 **Chromium Version:** 80
+- 🐘 **PHP Version:** 7.2
+- 🌍 **Chromium Version:** 80
 
 #### `php -m` output
 
+```
 [PHP Modules]
 Core
 ctype
@@ -59,5 +60,4 @@ zlib
 
 [Zend Modules]
 Xdebug
-
-
+```
