@@ -3,22 +3,61 @@ Laravel Test Container
 
 Use this docker image to run Laravel tests, including Dusk.
 
-Chrome driver version is: 80
+```
+swiftmade/laravel-test-container:7.2
+```
 
-Includes the following PHP extensions (on top of the defaults):
+🐘 **PHP Version:** 7.2
+🌍 **Chromium Version:** 80
 
-- redis
-- libsodium
-- xdebug
-- pdo
-- pdo_mysql
-- pdo_pgsql
-- pgsql
-- zip
-- intl
-- soap
+#### `php -m` output
+
+[PHP Modules]
+Core
+ctype
+curl
+date
+dom
+exif
+fileinfo
+filter
+ftp
+gd
+hash
+iconv
+intl
+json
+libxml
+mbstring
+mysqlnd
+openssl
+pcre
+PDO
+pdo_mysql
+pdo_pgsql
+pdo_sqlite
+pgsql
+Phar
+posix
+readline
+redis
+Reflection
+session
+SimpleXML
+soap
+sodium
+SPL
+sqlite3
+standard
+tokenizer
+xdebug
+xml
+xmlreader
+xmlwriter
+zip
+zlib
+
+[Zend Modules]
+Xdebug
 
 
-### PHP 7.2
-
-`swiftmade/laravel-test-container:7.2`
