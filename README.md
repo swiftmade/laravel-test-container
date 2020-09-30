@@ -14,6 +14,7 @@ swiftmade/laravel-test-container:7.4
 
 ```
 [PHP Modules]
+bcmath
 Core
 ctype
 curl
