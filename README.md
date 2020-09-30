@@ -4,10 +4,10 @@ Laravel Test Container
 Use this docker image to run Laravel tests, including Dusk.
 
 ```
-swiftmade/laravel-test-container:7.2
+swiftmade/laravel-test-container:7.4
 ```
 
-- 🐘 **PHP Version:** 7.2
+- 🐘 **PHP Version:** 7.4
 - 🌍 **Chromium Version:** 80
 
 #### `php -m` output
