@@ -1,17 +1,17 @@
-FROM php:7.2
+FROM php:8.0
 
 ARG BUILD_DATE
 ARG VCS_REF
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 LABEL Maintainer="Swiftmade <hello@swiftmade.co>" \
-      Description="A simple PHP 7.2 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
-      org.label-schema.name="swiftmade/laravel-test-container:7.2" \
-      org.label-schema.description="A simple PHP 7.2 image which contain just the minimum required to run Dusk on CI/CD pipelines." \
-      org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.vcs-url="https://github.com/swiftmade/laravel-test-container" \
-      org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.schema-version="1.0.0"
+    Description="A simple PHP 7.4 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
+    org.label-schema.name="swiftmade/laravel-test-container:8.0" \
+    org.label-schema.description="Laravel test container w/ all necessary extensions to run PHPUnit and Laravel Dusk tests." \
+    org.label-schema.build-date=$BUILD_DATE \
+    org.label-schema.vcs-url="https://github.com/swiftmade/laravel-test-container" \
+    org.label-schema.vcs-ref=$VCS_REF \
+    org.label-schema.schema-version="1.0.0"
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
@@ -31,7 +31,7 @@ RUN docker-php-source extract \
     && docker-php-source delete \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-configure gd --with-jpeg \
-    && docker-php-ext-install -j"$(nproc)" pdo pdo_mysql pdo_pgsql pgsql intl zip soap gd exif \
+    && docker-php-ext-install -j"$(nproc)" pdo pdo_mysql pdo_pgsql pgsql intl zip soap gd exif bcmath \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
