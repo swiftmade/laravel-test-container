@@ -31,7 +31,7 @@ RUN docker-php-source extract \
     && docker-php-source delete \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-configure gd --with-jpeg \
-    && docker-php-ext-install -j"$(nproc)" pdo pdo_mysql pdo_pgsql pgsql intl zip soap gd exif bcmath \
+    && docker-php-ext-install -j"$(nproc)" pdo pdo_mysql pdo_pgsql pgsql intl zip soap gd exif bcmath pcntl \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
