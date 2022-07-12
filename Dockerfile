@@ -1,12 +1,12 @@
-FROM php:8.0
+FROM php:8.1
 
 ARG BUILD_DATE
 ARG VCS_REF
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 LABEL Maintainer="Swiftmade <hello@swiftmade.co>" \
-    Description="A simple PHP 8.0 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
-    org.label-schema.name="swiftmade/laravel-test-container:8.0" \
+    Description="A simple PHP 8.1 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
+    org.label-schema.name="swiftmade/laravel-test-container:8.1" \
     org.label-schema.description="Laravel test container w/ all necessary extensions to run PHPUnit and Laravel Dusk tests." \
     org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.vcs-url="https://github.com/swiftmade/laravel-test-container" \

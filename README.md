@@ -3,22 +3,22 @@
 Use this docker image to run Laravel tests, including Dusk.
 
 ```
-swiftmade/laravel-test-container:8.0
+swiftmade/laravel-test-container:8.1
 ```
 
-- 🐘 **PHP Version:** 8.0
-- 🌍 **Chromium Version:** 80
+- 🐘 **PHP Version:** 8.1.8
+- 🌍 **Chromium Version:** 103.0.5060.114
 
 #### What's inside?
 
 ```
-PHP 8.0.17 (cli) (built: Mar 29 2022 02:21:58) ( NTS )
+PHP 8.1.8 (cli) (built: Jul 12 2022 08:21:41) (NTS)
 Copyright (c) The PHP Group
-Zend Engine v4.0.17, Copyright (c) Zend Technologies
-    with Xdebug v3.1.4, Copyright (c) 2002-2022, by Derick Rethans
+Zend Engine v4.1.8, Copyright (c) Zend Technologies
+    with Xdebug v3.1.5, Copyright (c) 2002-2022, by Derick Rethans
 
 
-Composer version 2.3.3 2022-04-01 22:15:35
+Composer version 2.3.9 2022-07-05 16:52:11
 
 
 [PHP Modules]
