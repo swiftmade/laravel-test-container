@@ -5,7 +5,7 @@ ARG VCS_REF
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 LABEL Maintainer="Swiftmade <hello@swiftmade.co>" \
-    Description="A simple PHP 7.4 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
+    Description="A simple PHP 8.0 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
     org.label-schema.name="swiftmade/laravel-test-container:8.0" \
     org.label-schema.description="Laravel test container w/ all necessary extensions to run PHPUnit and Laravel Dusk tests." \
     org.label-schema.build-date=$BUILD_DATE \
@@ -31,9 +31,10 @@ RUN docker-php-source extract \
     && docker-php-source delete \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-configure gd --with-jpeg \
-    && docker-php-ext-install -j"$(nproc)" pdo pdo_mysql pdo_pgsql pgsql intl zip soap gd exif bcmath \
+    && docker-php-ext-install -j"$(nproc)" pdo pdo_mysql pdo_pgsql pgsql intl zip soap gd exif bcmath pcntl \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 
 RUN Xvfb -ac :0 -screen 0 1280x1024x16 &
+RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini;
