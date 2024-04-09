@@ -1,12 +1,12 @@
-FROM php:8.1
+FROM php:8.2
 
 ARG BUILD_DATE
 ARG VCS_REF
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 LABEL Maintainer="Swiftmade <hello@swiftmade.co>" \
-    Description="A simple PHP 8.1 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
-    org.label-schema.name="swiftmade/laravel-test-container:8.1" \
+    Description="A simple PHP 8.2 image which contain just the minimum required to run Dusk on bitbucket pipelines." \
+    org.label-schema.name="swiftmade/laravel-test-container:8.2" \
     org.label-schema.description="Laravel test container w/ all necessary extensions to run PHPUnit and Laravel Dusk tests." \
     org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.vcs-url="https://github.com/swiftmade/laravel-test-container" \
@@ -20,8 +20,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Install dependencies
 RUN apt-get update && apt-get install -y -q --no-install-recommends git \
     libsodium-dev unzip zlib1g-dev libxpm4 libxrender1 libgtk2.0-0 libnss3 \
-    libgconf-2-4 chromium xvfb gtk2-engines-pixbuf xfonts-cyrillic \
-    xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable imagemagick x11-apps libicu-dev \
+    libgconf-2-4 chromium xvfb gtk2-engines-pixbuf  \
+    imagemagick x11-apps libicu-dev \
     libzip-dev libpq-dev libxml2-dev libjpeg-dev libpng-dev
 
 # Configure/install PHP extensions
